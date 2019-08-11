@@ -1,0 +1,25 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-6">
+      <h1>{{title}}</h1>
+    </div>
+  </div>
+  <div class="row form-group">
+    <div class="col-sm-4">
+      Enter Any String : 
+    </div>
+    <div class="col-sm-6">
+      <input type="text" name=str #str class="form-control" />
+    </div>
+  </div>
+  <div class="row form-group">
+    <div class="col-sm-4">
+      <button type="button" class="btn btn-info" (click)="reverse(str.value)">Reverse</button>
+    </div>    
+  </div>
+  <div class="row form-group">
+    <div class="col">
+      Reverse String is : {{revString}}
+    </div>
+  </div>
+</div>
