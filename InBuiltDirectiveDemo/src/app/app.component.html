@@ -1,0 +1,32 @@
+<div class="container">
+  <div class="row form-group bg-danger text-white">
+    <div class="col">
+      <h1>{{title}}</h1>
+    </div>
+  </div>
+  <div class="row form-group">
+    <div class="col">
+      <table class="table table-bordered">
+        <tr>
+          <th>Product Id</th>
+          <th>Code</th>
+          <th>Name</th>
+          <th>Price</th>
+        </tr>
+        <tr *ngFor="let product of productList;let i=index;" (click)="setSelectedProduct(product)" [class.selected]="product == selectedProduct">
+          <td>{{product.id}} --- {{i}}</td>
+          <td>{{product.code}}</td>
+          <td>{{product.name}}</td>
+          <td>{{product.unitPrice}}</td>
+        </tr>
+      </table>
+    </div>    
+  </div>  
+  <div class="row form-group">
+      <div class="col">
+        <p>
+          Selected Product Is : {{selectedProduct.name}}
+        </p>
+      </div>
+  </div>
+</div>
