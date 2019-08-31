@@ -1,0 +1,79 @@
+<div class="card">
+    <div class="card-header bg-warning">
+        Manage Course
+    </div>    
+    <div class="card-body">
+        <div class="row form-group alert-success" *ngIf="message !== ''">
+            <div class="col">
+                {{message}}
+            </div>
+        </div>
+        <div class="row form-group">
+            <div class="col-sm-4">
+                Id:
+            </div>
+            <div class="col-sm-4">  
+                <input type=text name=id class="form-control" [(ngModel)]="newCourse.id" [readonly]="isUpdate" />
+            </div>
+        </div>
+        <div class="row form-group">
+            <div class="col-sm-4">
+                Name:
+            </div>
+            <div class="col-sm-4">
+                <input type=text name=name class="form-control" [(ngModel)]="newCourse.name" />
+            </div>
+        </div>
+        <div class="row form-group">
+                <div class="col-sm-4">
+                    Fees:
+                </div>
+                <div class="col-sm-4">
+                    <input type=text name=fees class="form-control" [(ngModel)]="newCourse.fees" />
+                </div>
+        </div>        
+        <div class="row form-group">
+                <div class="col-sm-4">
+                    Trainer Name:
+                </div>
+                <div class="col-sm-4">
+                    <input type=text name=trainerName class="form-control" [(ngModel)]="newCourse.trainerName" />
+                </div>
+        </div>        
+        <div class="row form-group">
+                <div class="col-sm-4">
+                    <button class="btn btn-info"  (click)="add()" *ngIf="! isUpdate">Add</button>
+                    <button class="btn btn-info"  (click)="update()" *ngIf="isUpdate">Update</button>
+                </div>                
+        </div>        
+        <div class="row form-group">
+            <div class="col">
+                    <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th>Id</th>
+                                    <th>Course Name</th>
+                                    <th>Fees</th>
+                                    <th>Trainer Name</th>
+                                    <th>Action</th>
+                                </tr>                
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let course of courseList">
+                                    <td>{{course.id}}</td>   
+                                    <td>{{course.name}}</td>
+                                    <td>{{course.fees}}</td>
+                                    <td>{{course.trainerName}}</td>
+                                    <td>
+                                        <button class="btn btn-success m-1" (click)="edit(course.id)">Edit</button>
+                                        <button class="btn btn-danger m-1" (click)="delete(course.id)">Delete</button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                
+                    </table>
+            </div>
+        </div>
+        
+    </div>
+</div>
