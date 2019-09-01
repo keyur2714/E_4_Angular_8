@@ -1,0 +1,33 @@
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <h1>{{title}}</h1>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <app-customer-list></app-customer-list>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <app-message></app-message>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <app-message [message]="'Good Morning...!'"></app-message>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <app-message [message]="msg" [messageType]="'danger'"></app-message>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-6">
+      <app-message *ngFor="let mg of messageList" [message]="mg" [messageType]="'warning'">
+      </app-message>
+    </div>
+  </div>
+</div>

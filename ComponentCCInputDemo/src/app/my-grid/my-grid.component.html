@@ -1,0 +1,23 @@
+<div class="card-container">
+    <div class="card">
+        <div class="card-header bg-warning">
+            {{title}}
+        </div>
+        <div class="card-body">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                       <th *ngFor="let header of headerList">{{header}}</th>  
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let data of dataList">
+                        <td *ngFor="let column of columnList">
+                            {{data[column]}}
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
