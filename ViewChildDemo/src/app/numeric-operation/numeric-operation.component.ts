@@ -36,7 +36,7 @@ export class NumericOperationComponent implements OnInit {
     let num1 = parseInt(this.number1.nativeElement.value);
     let num2 = parseInt(this.number2.nativeElement.value);
     let res = this.numberUtilComponent.add(num1,num2);
-    this.res = "Result Is : "+res;
+    this.res = ""+res;
     this.result.nativeElement.innerHTML="Result Is : "+res;
     this.number1.nativeElement.value = '';
     this.number2.nativeElement.value = '';

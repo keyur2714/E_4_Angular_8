@@ -2,7 +2,7 @@ import { Component, Input } from '@angular/core';
 
 @Component({
     selector : 'app-number-util',
-    template : `<h1>{{result}}</h1>`,
+    template : `<h1><ng-content></ng-content>{{result}}</h1>`,
     styles : ['']
 })
 export class NumberUtilComponent {
