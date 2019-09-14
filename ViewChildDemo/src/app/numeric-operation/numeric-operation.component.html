@@ -1,0 +1,31 @@
+<div class="card-container">
+    <div class="card">
+        <div class="card-header bg-warning">
+            Numeric Operations
+        </div>
+        <div class="card-body">
+            <div class="row form-group">
+                <div class="col-sm-4">Number 1: </div>
+                <div class="col-sm-4"><input type=text name=num1 #num1 class="form-control"/></div>
+            </div>
+            <div class="row form-group">
+                <div class="col-sm-4">Number 2: </div>
+                <div class="col-sm-4"><input type=text name=num2 #num2 class="form-control"/></div>
+            </div>
+            <div class="row form-group">
+                <div class="col-sm-4"> 
+                    <button class="btn btn-info m-1" (click)="add()">+</button>
+                    <button class="btn btn-info m-1" (click)="sub()">-</button>
+                    <button class="btn btn-info m-1" (click)="div()">/</button>
+                    <button class="btn btn-info m-1" (click)="mul()">*</button>
+                </div>
+            </div>
+            <div class="row form-group">
+                <div class="col">
+                    <app-number-util [result]="res"></app-number-util>
+                    <span #result></span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
