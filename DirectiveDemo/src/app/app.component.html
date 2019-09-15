@@ -1,0 +1,38 @@
+<div class="container">
+
+  <div class="row">
+    <div class="col">
+      <select name="color" (change)="changeStyle(cl.value)" class="form-control" #cl>
+        <option value='red'>Red</option>
+        <option value='green'>Green</option>
+        <option value='blue'>Blue</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col">
+      <h1 appMyStyle #h1>{{title}}</h1>
+    </div>
+  </div>
+  <div class="row" *appMyIf="true">
+    <div class="col" *appMyFor="7;index:4;counter:7">
+      <p appMyStyle [color]="'green'" [fontSize]="'35px'" #p1>Hello Radhe Krishna...!</p>
+    </div>
+  </div>
+
+  <div class="row" *ngIf="age >= 18 ;then ifBlock;else elseBlock">          
+  </div>
+  <ng-template #ifBlock [appMyIf]="age >= 18">
+    <div class="col">
+        You are Eligible for voting...!
+    </div>    
+  </ng-template>
+
+  <ng-template #elseBlock [appMyIf]="age < 18">
+    <div class="col">
+        You are Not Eligible for voting...!
+    </div>    
+  </ng-template>
+
+</div>
