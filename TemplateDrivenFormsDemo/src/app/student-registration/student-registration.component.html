@@ -10,10 +10,15 @@
                         Name
                     </div>
                     <div class="col-sm-4">
-                        <input type=text name=name class="form-control" ngModel required #name=ngModel/>
+                        <input type=text name=name class="form-control" [(ngModel)]="student.name" required #name=ngModel minlength="3"/>
                     </div>
                     <div class="col-4" *ngIf="name.invalid && name.touched">
-                        Name is Mandatory Field.
+                        <div *ngIf="name.errors['required']">
+                                Name is Mandatory Field.
+                        </div>
+                        <div *ngIf="name.errors['minlength']">
+                                Min 3 Char Require in Name.
+                        </div>
                     </div>
                 </div>
                 <div class="row form-group">
@@ -21,10 +26,18 @@
                         Mobile No
                     </div>
                     <div class="col-sm-4">
-                        <input type=text name=mobileNo class="form-control" ngModel required #mobileNo=ngModel/>
+                        <input type=text name=mobileNo class="form-control" [(ngModel)]="student.mobileNo" required #mobileNo=ngModel minlength="10" pattern="^[0-9]+$"/>
                     </div>
                     <div class="col-4" *ngIf="mobileNo.invalid && mobileNo.touched">
-                        Mobile Number is Mandatory Field.
+                        <div *ngIf="mobileNo.errors['required']">
+                            Mobile Number is Mandatory Field.
+                        </div>
+                        <div *ngIf="mobileNo.errors['minlength']">
+                            10 Digits is require in Mobile Number Field.
+                        </div>
+                        <div *ngIf="mobileNo.errors['pattern']">
+                            Only Digits Allowed in mobile number.
+                        </div>
                     </div>
                 </div>
                 <div class="row form-group">
@@ -32,10 +45,15 @@
                         Email
                     </div>
                     <div class="col-sm-4">
-                        <input type=text name=email class="form-control" ngModel required #email=ngModel/>
+                        <input type=text name=email class="form-control" [(ngModel)]="student.email" required #email=ngModel email/>
                     </div>
                     <div class="col-4" *ngIf="email.invalid && email.touched">
-                        Email is Mandatory Field.    
+                        <div *ngIf="email.errors['required']">
+                                Email is Mandatory Field.    
+                        </div>
+                        <div *ngIf="email.errors['email']">
+                                Invalid Email Address.
+                        </div>
                     </div>
                 </div>
                 <div class="row form-group">
@@ -43,7 +61,7 @@
                         Course
                     </div>
                     <div class="col-sm-4">
-                        <select name="course" class="form-control" ngModel>
+                        <select name="course" class="form-control" [(ngModel)]="student.course">
                             <option>-:Select:-</option>
                             <option *ngFor="let course of courseList" [ngValue]="course">
                                 {{course.courseName}}
@@ -56,8 +74,8 @@
                         Gender
                     </div>
                     <div class="col-sm-4">
-                        <input type=radio name=gender class="radio-inline" value="M" ngModel/>Male
-                        <input type=radio name=gender class="radio-inline" value="F" ngModel/>FeMale
+                        <input type=radio name=gender class="radio-inline" value="M" [(ngModel)]="student.gender"/>Male
+                        <input type=radio name=gender class="radio-inline" value="F" [(ngModel)]="student.gender"/>FeMale
                     </div>
                 </div>
                 <div class="row form-group">
@@ -69,7 +87,28 @@
             </form>
         </div>
     </div>
-    <div *ngIf="student.name != ''">
-        {{student | json}}
+    <div *ngIf="isSubmitted">
+        <table class="table table-bordered">
+            <tr>
+                <th>Name</th>
+                <td>{{student.name}}</td>
+            </tr>
+            <tr>
+                <th>Mobile Number</th>
+                <td>{{student.mobileNo}}</td>
+            </tr>
+            <tr>
+                <th>Email</th>
+                <td>{{student.email}}</td>
+            </tr>
+            <tr>
+                <th>Course Name</th>
+                <td>{{student.course.courseName}}</td>
+            </tr>
+            <tr>
+                <th>Gender</th>
+                <td>{{student.gender === 'M' ? 'Male' : 'Female'}}</td>
+            </tr>
+        </table>
     </div>    
 </div>

@@ -11,6 +11,7 @@ import { Student } from './student.model';
 export class StudentRegistrationComponent implements OnInit {
 
   student : Student = new Student();
+  isSubmitted : boolean = false;
 
   constructor() { }
 
@@ -39,13 +40,16 @@ export class StudentRegistrationComponent implements OnInit {
     this.courseList.push(course2);
     this.courseList.push(course3);
 
+    this.student.course  = this.courseList[1];
+    this.student.gender = 'F';
   }
 
   save(frm : NgForm) : void{
     console.log(frm);
     console.log(frm.value);
     if(frm.valid){
-      this.student = frm.value;
+      //this.student = frm.value;
+      this.isSubmitted = true;
     }    
   }
 
