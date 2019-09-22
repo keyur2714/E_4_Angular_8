@@ -1,0 +1,43 @@
+<div class="card-container">
+    <div class="card">
+        <div class="card-header bg-dark">
+            Item Entry
+        </div>
+        <div class="card-body">
+            <form [formGroup]="itemEntryForm" (ngSubmit)="save()">
+                <div class="row form-group">
+                    <div class="col-sm-4">Code :</div>
+                    <div class="col-sm-4">
+                        <input type=text [formControlName]="'code'" class="form-control" />
+                    </div>
+                    <div class="col-sm-4" *ngIf="itemEntryForm.get('code').invalid && itemEntryForm.get('code').touched">
+                        Code is Mandatory Field.        
+                    </div>
+                </div>
+                <div class="row form-group">
+                    <div class="col-sm-4">Description :</div>
+                    <div class="col-sm-4">
+                        <input type=text [formControlName]="'desc'" class="form-control" />
+                    </div>
+                    <div class="col-sm-4" *ngIf="itemEntryForm.get('desc').invalid && itemEntryForm.get('desc').touched">
+                            Description is Mandatory Field.        
+                    </div>
+                </div>
+                <div class="row form-group">
+                    <div class="col-sm-4">Price :</div>
+                    <div class="col-sm-4">
+                        <input type=text [formControlName]="'price'" class="form-control" />
+                    </div>
+                    <div class="col-sm-4" *ngIf="itemEntryForm.get('price').invalid && itemEntryForm.get('price').touched">
+                        Price is Mandatory Field.        
+                    </div>
+                </div>
+                <div class="row form-group">
+                    <div class="col-sm-4">
+                        <button class="btn btn-info" [disabled]="itemEntryForm.invalid">Save</button>
+                    </div>                    
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
