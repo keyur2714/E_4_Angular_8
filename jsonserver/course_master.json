@@ -1,0 +1,22 @@
+{
+	"course" : [
+		{		
+			"id" : 1,
+			"courseCode" : "ANG",
+			"courseName" : "Angular",
+			"fees" : 13800
+		},
+		{		
+			"id" : 2,
+			"courseCode" : "JAVAB",
+			"courseName" : "Core Java",
+			"fees" : 8000
+		},
+		{		
+			"id" : 3,
+			"courseCode" : "BIGDATA",
+			"courseName" : "Hadoop",
+			"fees" : 15800
+		}
+	]
+}

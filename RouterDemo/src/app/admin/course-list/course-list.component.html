@@ -1,0 +1,20 @@
+<div class="row">
+    <div class="col">
+            <table class="table table-bordered table-striped bg-dark text-info">
+                <tr>
+                    <th>Id</th>
+                    <th>Course Code</th>
+                    <th>Course Name</th>
+                    <th>Fees</th>
+                </tr>
+                <tr *ngFor="let course of courseList">
+                    <td>
+                        <a [routerLink]="'/admin/course-detail/'+course.id" [queryParams]="{name: 'denish'}">{{course.id}}</a>
+                    </td>
+                    <td>{{course.courseCode}}</td>
+                    <td>{{course.courseName}}</td>
+                    <td>{{course.fees}}</td>
+                </tr>
+            </table>
+    </div>
+</div>
