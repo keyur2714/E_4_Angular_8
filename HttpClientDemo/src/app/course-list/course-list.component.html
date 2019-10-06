@@ -1,0 +1,14 @@
+<table class="table table-bordered bg-dark text-info">
+    <tr>
+        <th>Id</th>
+        <th>Course Code</th>
+        <th>Course Name</th>
+        <th>Fees</th>
+    </tr>
+    <tr *ngFor="let course of courseList">
+        <td>{{course.id}}</td>
+        <td>{{course.courseCode}}</td>
+        <td>{{course.courseName}}</td>
+        <td>{{course.fees}}</td>
+    </tr>
+</table>
