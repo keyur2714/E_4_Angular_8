@@ -1,12 +1,18 @@
 <div class="container">
   <div class="row">
     <div class="col">
-      {{title}}
+      <h1>{{title}}</h1>
     </div>
   </div>
   <div class="row">
     <div class="col">
-      <app-course-list></app-course-list>
+      <!-- <app-course-list></app-course-list> -->
+      <a [routerLink]="'course'" [routerLinkActive]="'active'">Manage Course</a>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <router-outlet></router-outlet>
     </div>
   </div>
 </div>

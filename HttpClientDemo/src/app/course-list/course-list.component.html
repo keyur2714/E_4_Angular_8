@@ -1,14 +1,24 @@
+<div class="row">
+    <div class="col text-right">
+        <a [routerLink]="'/addCourse'" class="btn btn-primary">Add</a>
+    </div>
+</div>
 <table class="table table-bordered bg-dark text-info">
     <tr>
         <th>Id</th>
         <th>Course Code</th>
         <th>Course Name</th>
         <th>Fees</th>
+        <th>Action</th>
     </tr>
     <tr *ngFor="let course of courseList">
         <td>{{course.id}}</td>
         <td>{{course.courseCode}}</td>
         <td>{{course.courseName}}</td>
         <td>{{course.fees}}</td>
+        <td>
+            <a [routerLink]="['/editCourse/',course.id]" class="btn btn-success m-1">Edit</a>
+            <a [routerLink]="['/deleteCourse/',course.id]" class="btn btn-danger m-1">Delete</a>
+        </td>
     </tr>
 </table>

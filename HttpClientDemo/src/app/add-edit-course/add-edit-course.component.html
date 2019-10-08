@@ -1,0 +1,50 @@
+<div class="row" *ngIf="message !== ''">
+    <div class="col alert alert-success">
+        {{message}}
+    </div>
+</div>
+<div *ngIf="isLoading">
+    Loading....
+</div>
+<div *ngIf="! isLoading">
+<form [formGroup]="courseForm" (ngSubmit)="save()">
+    <div class="row form-group">
+        <div class="col-sm-4">
+            Course Id: 
+        </div>
+        <div class="col-sm-4">
+            <input type="text" class="form-control" name="id" [formControlName]="'id'" [readonly]="editId !== 0" />            
+        </div>
+    </div>
+    <div class="row form-group">
+        <div class="col-sm-4">
+            Course Code: 
+        </div>
+        <div class="col-sm-4">
+            <input type="text" class="form-control" name="courseCode" [formControlName]="'courseCode'" />            
+        </div>
+    </div>
+    <div class="row form-group">
+        <div class="col-sm-4">
+            Course Name: 
+        </div>
+        <div class="col-sm-4">
+            <input type="text" class="form-control" name="courseName" [formControlName]="'courseName'" />            
+        </div>
+    </div>
+    <div class="row form-group">
+        <div class="col-sm-4">
+            Course Fees: 
+        </div>
+        <div class="col-sm-4">
+            <input type="text" class="form-control" name="fees" [formControlName]="'fees'" />            
+        </div>
+    </div>
+    <div class="row form-group">
+        <div class="col-sm-4">
+            <button class="btn btn-info" *ngIf="editId === 0">Save</button>
+            <button type="button" (click)="update()" class="btn btn-primary" *ngIf="editId !== 0">Update</button>
+        </div>        
+    </div>
+</form>
+</div>
