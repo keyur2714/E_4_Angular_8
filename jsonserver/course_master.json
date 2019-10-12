@@ -1,24 +1,24 @@
 {
-  "user_details" : [
-	{
-		"id" : 1,
-		"userName" : "keyur",
-		"password" : "India@27",
-		"firstName" : "keyursinh",
-		"lastName" : "thakur",
-		"token" : "India@Keyur",
-		"userRole" : "ADMIN"
-	},
-	{
-		"id" : 2,
-		"userName" : "denish",
-		"password" : "India@26",
-		"firstName" : "denish",
-		"lastName" : "patel",
-		"token" : "India@Denish",
-		"userRole" : "USER"
-	}
-  ],	
+  "user_details": [
+    {
+      "id": 1,
+      "userName": "keyur",
+      "password": "India@27",
+      "firstName": "keyursinh",
+      "lastName": "thakur",
+      "token": "India@Keyur",
+      "userRole": "ADMIN"
+    },
+    {
+      "id": 2,
+      "userName": "denish",
+      "password": "India@26",
+      "firstName": "denish",
+      "lastName": "patel",
+      "token": "India@Denish",
+      "userRole": "USER"
+    }
+  ],
   "course": [
     {
       "id": 1,

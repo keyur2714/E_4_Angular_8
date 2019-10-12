@@ -1,13 +1,21 @@
 <div class="container">
   <div class="row">
     <div class="col">
-      <h1>{{title}}</h1>
+      <mat-slider min="1" max="100" step="1" value="1"></mat-slider>
+      <button mat-button color="primary">Primary</button>
+      <button mat-raised-button color="primary">Primary</button>
     </div>
   </div>
   <div class="row">
     <div class="col">
       <!-- <app-course-list></app-course-list> -->
       <a [routerLink]="'course'" [routerLinkActive]="'active'">Manage Course</a>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <!-- <app-course-list></app-course-list> -->      
+      <button mat-button color="warn" [routerLink]="'courseMaterial'" [routerLinkActive]="'active'">Manage Course Material</button>
     </div>
   </div>
   <div class="row">
