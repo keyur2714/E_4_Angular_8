@@ -20,6 +20,17 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatDialogModule } from '@angular/material/dialog';
 import { CourseMaterialComponent } from './course-material/course-material.component';
 import { CourseDetailComponent } from './course-detail/course-detail.component';
+import { HomeComponent } from './home/home.component';
+import { LayoutModule } from '@angular/cdk/layout';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatIconModule } from '@angular/material/icon';
+import { MatListModule } from '@angular/material/list';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { MatGridListModule } from '@angular/material/grid-list';
+import { MatCardModule } from '@angular/material/card';
+import { MatMenuModule } from '@angular/material/menu';
+import { AuthGuard } from './auth/auth-guard.service';
 
 @NgModule({
   declarations: [
@@ -29,7 +40,9 @@ import { CourseDetailComponent } from './course-detail/course-detail.component';
     ItemListComponent,
     AddEditCourseComponent,
     CourseMaterialComponent,
-    CourseDetailComponent
+    CourseDetailComponent,
+    HomeComponent,
+    DashboardComponent
   ],
   entryComponents : [
     CourseDetailComponent
@@ -47,10 +60,19 @@ import { CourseDetailComponent } from './course-detail/course-detail.component';
     MatInputModule,
     MatSortModule,
     MatPaginatorModule,
-    MatDialogModule
+    MatDialogModule,
+    LayoutModule,
+    MatToolbarModule,
+    MatSidenavModule,
+    MatIconModule,
+    MatListModule,
+    MatGridListModule,
+    MatCardModule,
+    MatMenuModule
   ],
   providers: [
-    CourseService
+    CourseService,
+    AuthGuard
   ],
   bootstrap: [AppComponent]
 })

@@ -12,11 +12,14 @@ export class CourseDetailComponent implements OnInit {
   constructor(public dialogRef: MatDialogRef<CourseDetailComponent>,
     @Inject(MAT_DIALOG_DATA) public data: Course) { }
 
-  ngOnInit() {
-    alert(this.data)
+  ngOnInit() {    
   }
 
   onNoClick(): void {
+    this.dialogRef.close();
+  }
+
+  close() : void {
     this.dialogRef.close();
   }
 }

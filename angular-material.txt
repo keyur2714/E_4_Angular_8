@@ -1,0 +1,4 @@
+
+ng generate @angular/material:material-nav --name home
+
+ng generate @angular/material:material-dashboard --name dashboard --skipTests
