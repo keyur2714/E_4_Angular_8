@@ -1,0 +1,6 @@
+
+	
+	
+	<button [type]="submit">OK</button>
+	
+	<app-message [message]="'Hi'" ></app-message>

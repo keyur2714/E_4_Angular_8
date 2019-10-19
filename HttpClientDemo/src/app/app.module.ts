@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
-import { ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CourseListComponent } from './course-list/course-list.component';
@@ -31,6 +31,11 @@ import { MatGridListModule } from '@angular/material/grid-list';
 import { MatCardModule } from '@angular/material/card';
 import { MatMenuModule } from '@angular/material/menu';
 import { AuthGuard } from './auth/auth-guard.service';
+import { NavbarComponent } from './navbar/navbar.component';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { LoginComponent } from './login/login.component';
+import { AuthService } from './auth/auth.service';
+import { LogoutComponent } from './logout/logout.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +47,10 @@ import { AuthGuard } from './auth/auth-guard.service';
     CourseMaterialComponent,
     CourseDetailComponent,
     HomeComponent,
-    DashboardComponent
+    DashboardComponent,
+    NavbarComponent,
+    LoginComponent,
+    LogoutComponent
   ],
   entryComponents : [
     CourseDetailComponent
@@ -51,6 +59,7 @@ import { AuthGuard } from './auth/auth-guard.service';
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
+    FormsModule,
     HttpClientModule,
     BrowserAnimationsModule,
     MatSliderModule,
@@ -68,11 +77,13 @@ import { AuthGuard } from './auth/auth-guard.service';
     MatListModule,
     MatGridListModule,
     MatCardModule,
-    MatMenuModule
+    MatMenuModule,
+    MatProgressSpinnerModule
   ],
   providers: [
     CourseService,
-    AuthGuard
+    AuthGuard,
+    AuthService
   ],
   bootstrap: [AppComponent]
 })

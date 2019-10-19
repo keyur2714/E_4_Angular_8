@@ -54,7 +54,7 @@ export class CourseMaterialComponent implements OnInit {
     course.fees = 11111;
     const dialogRef = this.dialog.open(CourseDetailComponent, {
       width: '750px',
-      height: '500px',
+      height: '300px',
       data: course
     });
 
