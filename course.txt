@@ -53,13 +53,13 @@
 	11.Router - For Navigation	- Done
 	12.Route Guards - for Authorizations - Done 
 
-	13. Custom Modules and it's communications - 
-	14. Lazy Loading & Eager Loading in Modules -
+	13. Custom Modules and it's communications - Done
+	14. Lazy Loading & Eager Loading in Modules - Done
  
 	15. Pipes - for Data Transform. it's like Filter - Done
 		- Inbuilt Pipes - Done
 		- Custom Pipes - Done
-	16. Angular Material
+	16. Angular Material -- Done
 		- setup	
 		- how to use basic component
 		- DATA Table / Model Dialog / Buttons		

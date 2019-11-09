@@ -11,6 +11,7 @@ import { AuthInterceptor } from './auth/auth.interceptor';
 import { CourseModule } from './course/course.module';
 import { FormsModule } from '@angular/forms';
 import { SharedModule } from './shared/shared.module';
+import { AuthGuard } from './auth/auth-guard.service';
 
 @NgModule({
   declarations: [
@@ -27,9 +28,10 @@ import { SharedModule } from './shared/shared.module';
     BrowserAnimationsModule,    
     AppRoutingModule,        
     SharedModule,
-    CourseModule    
+    //CourseModule    
   ],
-  providers: [        
+  providers: [  
+    AuthGuard,      
     AuthService,
     {
       provide : HTTP_INTERCEPTORS , useClass : AuthInterceptor , multi : true
@@ -37,4 +39,8 @@ import { SharedModule } from './shared/shared.module';
   ],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule { 
+  constructor(){
+    console.log("App Module Loaded...");
+  }
+}

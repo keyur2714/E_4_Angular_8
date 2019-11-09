@@ -7,8 +7,10 @@ import { DashboardComponent } from '../shared/dashboard/dashboard.component';
 import { CourseMaterialComponent } from './course-material/course-material.component';
 import { AddEditCourseComponent } from './add-edit-course/add-edit-course.component';
 const routes : Routes = [
-    {path : 'home' , component : NavbarComponent , canActivate : [AuthGuard],
-    canActivateChild: [AuthGuard],
+    // {path : 'home' , component : NavbarComponent , canActivate : [AuthGuard],
+    // canActivateChild: [AuthGuard],
+    {
+    path : '' , component : NavbarComponent,
     children : [
       {path : 'course' , component : CourseListComponent},
       {path : 'dashboard' , component : DashboardComponent},
@@ -28,5 +30,7 @@ const routes : Routes = [
     ]
 })
 export class CourseRoutingModule{
-    constructor(){}
+    constructor(){
+      console.log("Course Routing Module Loaded...");
+    }
 }

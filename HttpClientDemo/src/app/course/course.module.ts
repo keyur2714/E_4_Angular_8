@@ -9,9 +9,11 @@ import { CourseService } from './course-list/course.service';
 import { CourseRoutingModule } from './course-routing.module';
 import { AuthGuard } from '../auth/auth-guard.service';
 import { SharedModule } from '../shared/shared.module';
+import { NavbarComponent } from '../shared/navbar/navbar.component';
 
 @NgModule({
     declarations : [
+        NavbarComponent,
         CourseListComponent,    
         AddEditCourseComponent,
         CourseMaterialComponent,

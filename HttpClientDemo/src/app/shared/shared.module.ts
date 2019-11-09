@@ -23,7 +23,7 @@ import { RouterModule } from '@angular/router';
 @NgModule({
     declarations : [        
         DashboardComponent,
-        NavbarComponent
+        //NavbarComponent
     ],
     imports : [        
         CommonModule,
@@ -67,5 +67,7 @@ import { RouterModule } from '@angular/router';
     ]
 })
 export class SharedModule {
-
+    constructor(){
+        console.log("Shared Module Loaded...");
+    }
 }
