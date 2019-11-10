@@ -56,9 +56,9 @@
 	13. Custom Modules and it's communications - Done
 	14. Lazy Loading & Eager Loading in Modules - Done
  
-	15. Pipes - for Data Transform. it's like Filter - Done
-		- Inbuilt Pipes - Done
-		- Custom Pipes - Done
+	15. Pipes - for Data Transform. it's like Filter - 
+		- Inbuilt Pipes - 
+		- Custom Pipes - 
 	16. Angular Material -- Done
 		- setup	
 		- how to use basic component

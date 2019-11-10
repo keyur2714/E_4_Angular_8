@@ -1,0 +1,37 @@
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <h1>{{title}}</h1>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      {{name | uppercase | lowercase | welcome}}
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      {{emp.name | welcome}}
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      {{bDate | date : 'dd-MMM-yyyy hh:mm:ss a' | uppercase}}
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      {{emp | json}}
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      {{numObservable | async}} 
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      {{accountNumber | mask : 5 : '#'}}
+    </div>
+  </div>
+</div>
