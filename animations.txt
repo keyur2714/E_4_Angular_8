@@ -1,0 +1,88 @@
+1.  Configure BrowserAnimationsModule in App Module
+2. create animation in one file
+3. define animation constant in animations: attribute of component
+@Component({
+	animations: [<ANIMATION CONSTANT>]
+})
+
+trigger
+
+-trigger is an animation-specific function 
+that creates a trigger with 
+state and transition entries.
+- trigger function accepts following arguments. 
+	1. Trigger name
+	2. Array of state and transition. 
+
+Style:
+style is an animation-specific function. 
+It is defined with key/value of CSS properties. 
+style function is passed as an argument in 
+animation-specific functions such as state, transition, animate and keyframes. 
+State:
+	state is an animation-specific function. 
+	 It is an animation state within the given trigger.
+	state function accepts following arguments. 
+	1. state name
+	2. style
+animate:
+	
+	animate is an animation-specific function.
+	 It specifies an animation step. 
+	We need to pass following arguments to animate function. 
+	1. Timing expression 
+	2. style or keyframes function. This argument is optional. 
+
+- Timing expression: 'duration delay easing' 
+-duration: It defines how long animation will take place.
+	 - If we write 100, it means 100 milliseconds and 
+if we want to specify time unit then write 
+as string. '100ms' means 100 milliseconds and 
+'0.1s' means 0.1 second. 
+-delay: This is the time gap between 
+animation trigger
+ and beginning of transition. It is written in string with time unit in string. 
+-easing: 
+It defines how the animations accelerates 
+and decelerates during its runtime. Easing can be ease, ease-in, ease-out, ease-in-out etc. 
+
+transition:
+	- transition function is an animation-specific function. 
+	-transition function 
+runs the steps of animation for the given state change expression
+	-State change expression is written as state1 => state2 or state2 => state1 or state1 <=> state2. 
+	
+keyframes:  is an animation-specific function 
+that is used with animate function.	
+	keyframes applies different style 
+at different 
+offset of duration of animation. 
+
+animate('0.6s 100ms ease-in',keyframes([ 
+style({fontSize: '19px', backgroundColor: 'yellow', offset: 0.1 }),
+	   style({fontSize: '20px', backgroundColor: 'green', offset: 0.3 }),
+	   style({fontSize: '21px', backgroundColor: 'red', offset: 0.5 })
+	])) 
+
+To apply animation on host element we 
+need to use HostBinding.
+We need to pass the trigger 
+name to HostBinding. 
+@HostBinding('@roundAntiClockTrigger') 
+roundAntiClockTrigger = 'in'; 
+
+in' is the initial state name of animation 
+defined in animation 
+trigger function.
+HostBinding can also 
+bind CSS property to host element such as 
+
+@HostBinding('style.display')   display = 'block';
+@HostBinding('style.position')  position = 'absolute';
+
+
+
+
+
+
+

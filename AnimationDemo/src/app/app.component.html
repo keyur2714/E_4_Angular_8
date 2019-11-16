@@ -1,0 +1,37 @@
+<div class="container" *ngIf="loading">
+  <div class="row" [class]="'loader'">
+    <div class="col">
+      Loading... 
+    </div>
+  </div>
+</div> 
+<div class="container" *ngIf="!loading">
+  <div class="row">
+    <div class="col">
+      <h1>{{title}}</h1>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <button class="btn btn-info" (click)="toggleState()">Change State</button>
+    </div>    
+  </div>
+  <div class="row">
+    <div class="col">
+      <div [@stateTrigger]="state" style="width: 100px;height: 100px;">
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-4">
+      <table class="table" [@onOff2Trigger]="tableState">
+        <tr>
+          <th>Name</th>
+        </tr>
+        <tr *ngFor="let name of names">
+          <td>{{name}}</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</div>
